@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Art/Font/ubuntu-mono/UbuntuMono-B.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Prefabs/UI/play-button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/UI/about-button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/UI/options-button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Fade/FadeIn.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 2
+outline_color = Color( 0.666667, 0.396078, 0.658824, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="title_screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1160.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_right = 1040.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.909804, 0.764706, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Kindred Community Jam"
+align = 1
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 85.0
+margin_right = 1040.0
+margin_bottom = 487.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 1040.0
+margin_bottom = 402.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 2
+
+[node name="play-button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 212.0
+margin_right = 1040.0
+margin_bottom = 262.0
+scene_to_load = "res://Scenes/Play.tscn"
+
+[node name="options-button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 282.0
+margin_right = 1040.0
+margin_bottom = 332.0
+scene_to_load = "res://Scenes/Options.tscn"
+
+[node name="about-button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 352.0
+margin_right = 1040.0
+margin_bottom = 402.0
+scene_to_load = "res://Scenes/About.tscn"
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 491.0
+margin_right = 1040.0
+margin_bottom = 560.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "Version: 0.0.1
+Studio: PandaSheelStudio
+Youtube: YourGeekEric"
+align = 2
+uppercase = true
+
+[node name="FadeIn" parent="." instance=ExtResource( 5 )]
+visible = false
