@@ -61,19 +61,19 @@ alignment = 2
 margin_top = 212.0
 margin_right = 1040.0
 margin_bottom = 262.0
-scene_to_load = "res://Scenes/Play.tscn"
+scenePath = "res://Scenes/Play.tscn"
 
 [node name="options-button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 282.0
 margin_right = 1040.0
 margin_bottom = 332.0
-scene_to_load = "res://Scenes/Options.tscn"
+scenePath = "res://Scenes/Options.tscn"
 
 [node name="about-button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 352.0
 margin_right = 1040.0
 margin_bottom = 402.0
-scene_to_load = "res://Scenes/About.tscn"
+scenePath = "res://Scenes/About.tscn"
 
 [node name="VersionLabel" type="Label" parent="Menu"]
 margin_top = 491.0
